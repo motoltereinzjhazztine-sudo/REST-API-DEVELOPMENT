@@ -19,7 +19,7 @@ const roomSchema = new mongoose.Schema({
     },
     isBooked: {
         type: Boolean, // True or False
-        dafault: false, // Assume room is empty (False) at first
+        default: false, // Assume room is empty (False) at first
     },
     features: [String], // A list of words: ["Wifi", "TV", "Bath"]
     maintenanceLog: [

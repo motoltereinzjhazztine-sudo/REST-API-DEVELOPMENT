@@ -11,6 +11,7 @@ const generateToken = (id, role) => {
 // @desc    Register a new user
 // @route   POST /api/v1/auth/register
 exports.registerUser = async (req, res) => {
+    console.log('Request body received: ', req.body);
     try {
         const { name, email, password, role } = req.body;
 
@@ -21,7 +22,7 @@ exports.registerUser = async (req, res) => {
         // Create user
         const user = await User.create({ name, email, password, role });
 
-        res.status(201).json({
+        return res.status(201).json({
             _id: user._id,
             name: user.name,
             email: user.email,
@@ -29,7 +30,7 @@ exports.registerUser = async (req, res) => {
             token: generateToken(user._id, user.role)
         });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 };
 
@@ -44,7 +45,7 @@ exports.loginUser = async (req, res) => {
 
         // Check password using our model method
         if (user && (await user.matchPassword(password))) {
-            res.json({
+            return res.json({
                 id: user._id,
                 name: user.name,
                 email: user.email,
@@ -52,10 +53,10 @@ exports.loginUser = async (req, res) => {
                 token: generateToken(user._id, user.role) // Send token back to client
             });
         } else {
-            res.status(401).json({ message: 'Invalid email or password' });
+            return res.status(401).json({ message: 'Invalid email or password' });
         }
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 };
 
