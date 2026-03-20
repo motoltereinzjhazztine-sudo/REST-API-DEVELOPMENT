@@ -13,4 +13,4 @@ Markdown
 - Why is it important to return `404` instead of just an empty array or a generic error?
 - Answer: ...-404 clearly shows a resource doesn’t exist, unlike an empty array or generic error.
 **4. Testing:**
-- <img width="1366" height="768" alt="Screenshot 2026-03-20 102447" src="https://github.com/user-attachments/assets/9383c96d-f2be-422a-9b58-9419fe066f17" />
+- <img width="1366" height="768" alt="Screenshot 2026-03-20 121253" src="https://github.com/user-attachments/assets/249a2259-f023-4803-b60f-dd2550b4e65c" />
