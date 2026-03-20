@@ -1,29 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-// Import the Controller
-const { protect, authorize } = require('../middleware/authMiddleware');
-
-//Anyone can get rooms
-router.get('/', getRooms);
-
-// Only Admins and Managers can create rooms
-router.post('/', protect, authorize('admin', 'manager'), createRoom);
-
+// Imporrt the Controller
 const {
-    getallRooms,
+    getAllRooms,
     createRoom,
-    getRoomByID,
+    getRoomById,
     updateRoom,
     deleteRoom,
-    getAllRooms,
-}   =require('../controllers/roomController');
+} = require('../controllers/roomController');   
 
-//Routes
-router.get('/rooms', getAllRooms);
-router.post('/rooms', createRoom);
-router.get('/rooms/:id', getRoomByID);
-router.put('/rooms/:id', updateRoom);
-router.delete('/rooms/:id', deleteRoom);
+// Routes
+router.get('/rooms', getAllRooms); // GET all rooms
+router.post('/rooms', createRoom); // CREATE a new room
+router.get('/rooms/:id', getRoomById); // GET one room by ID
+router.put('/rooms/:id', updateRoom); // UPDATE a room by ID
+router.delete('/rooms/:id', deleteRoom); // DELETE a room by ID
 
 module.exports = router;
