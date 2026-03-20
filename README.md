@@ -14,3 +14,8 @@ Markdown
 - Answer: ...-404 clearly shows a resource doesn’t exist, unlike an empty array or generic error.
 **4. Testing:**
 - <img width="1366" height="768" alt="Screenshot 2026-03-20 121253" src="https://github.com/user-attachments/assets/249a2259-f023-4803-b60f-dd2550b4e65c" />
+**Activity #3
+- Why did I choose to Embed the Maintenance Log?
+- Answer: I embedded the maintenanceLog because repair history is specific to a single Room; keeping them together allows for faster data retrieval in a single query.
+- Why did I choose to Reference the Guest?
+- Answer: I referenced the Guest in the Booking model to avoid data duplication; this ensures that if a guest's profile changes, it updates across all their separate reservations automatically.
