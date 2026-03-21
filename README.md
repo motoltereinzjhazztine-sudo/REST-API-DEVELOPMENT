@@ -1,5 +1,5 @@
 Markdown
-# RESTful API Activity - [Your Name]
+# RESTful API Activity - [Tereinz Jhazztine M. Motol]
 ## Best Practices Implementation
 **1. Environment Variables:**
 - Why did we put `BASE_URI` in `.env` instead of hardcoding it?
@@ -19,3 +19,13 @@ Markdown
 - Answer: I embedded the maintenanceLog because repair history is specific to a single Room; keeping them together allows for faster data retrieval in a single query.
 - Why did I choose to Reference the Guest?
 - Answer: I referenced the Guest in the Booking model to avoid data duplication; this ensures that if a guest's profile changes, it updates across all their separate reservations automatically.
+**Acitivity #4
+1. Authentication vs Authorization
+- What is the difference between Authentication and Authorization in our code?
+- Answer: Authentication is the process of verifying who a user is. Authorization is the process of verifying what an authenticated user is allowed to do.
+2. Security (bcrypt)
+- Why did we use bcryptjs instead of saving passwords as plain text in MongoDB?
+- Answer: We use bcryptjs to protect user data, it "hashes" passwords into a non-reversible string so that even if the database is compromised, an attacker cannot read the actual passwords.
+3. JWT Structure
+- What does the protect middleware do when it receives a JWT from the client?
+- Answer: It extracts the token from the header, verifies its digital signature using the secret key, and attaches the decoded user information to the request object.
