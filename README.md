@@ -19,6 +19,7 @@ Markdown
 - Answer: I embedded the maintenanceLog because repair history is specific to a single Room; keeping them together allows for faster data retrieval in a single query.
 - Why did I choose to Reference the Guest?
 - Answer: I referenced the Guest in the Booking model to avoid data duplication; this ensures that if a guest's profile changes, it updates across all their separate reservations automatically.
+
 **Acitivity #4
 1. Authentication vs Authorization
 - What is the difference between Authentication and Authorization in our code?
